@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>越南白牌選品 v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&display=swap">
+<style>
+  :root{
+    --bg:#f7f6f3; --surface:#fff; --ink:#1c1e21; --soft:#5e646b; --faint:#8f959c;
+    --rule:#e0ddd6; --rule2:#efece6;
+    --lacquer:#8c2f25; --brass:#8a6a1f; --teal:#1f5c56;
+    --lacquer-bg:#f8eeec; --brass-bg:#f8f2e2; --teal-bg:#e9f1ef;
+    --display:"Bitter",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --bg:#131517; --surface:#1b1e21; --ink:#e7e5e0; --soft:#a2a8af; --faint:#717881;
+    --rule:#2d3237; --rule2:#23272b;
+    --lacquer:#e0857a; --brass:#d3ae55; --teal:#6fb8ac;
+    --lacquer-bg:#2a1c1a; --brass-bg:#272117; --teal-bg:#172624;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#131517; --surface:#1b1e21; --ink:#e7e5e0; --soft:#a2a8af; --faint:#717881;
+    --rule:#2d3237; --rule2:#23272b;
+    --lacquer:#e0857a; --brass:#d3ae55; --teal:#6fb8ac;
+    --lacquer-bg:#2a1c1a; --brass-bg:#272117; --teal-bg:#172624;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:40px 16px 80px}
+  header{border-bottom:3px double var(--ink);padding-bottom:20px;margin-bottom:8px}
+  .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
+  h1{font-family:var(--display);font-size:clamp(28px,5.5vw,40px);line-height:1.18;margin:0 0 12px;text-wrap:balance;letter-spacing:-.01em}
+  .lede{color:var(--soft);font-size:15px;margin:0;max-width:66ch}
+  .meta{font-size:12px;color:var(--faint);margin:14px 0 0;display:flex;gap:18px;flex-wrap:wrap}
+  section{margin-top:44px}
+  h2{font-family:var(--display);font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--soft);font-size:13.5px;margin:0 0 18px;max-width:68ch}
+  h3{font-family:var(--display);font-size:16.5px;margin:26px 0 8px}
+  .tw{overflow-x:auto;border-top:2px solid var(--ink);margin-bottom:6px}
+  table{border-collapse:collapse;width:100%;min-width:720px;font-size:13.5px}
+  th{text-align:left;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:9px 12px 9px 0;border-bottom:1px solid var(--rule)}
+  td{padding:11px 12px 11px 0;border-bottom:1px solid var(--rule2);vertical-align:top}
+  tr:last-child td{border-bottom:1px solid var(--rule)}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .rk{font-family:var(--display);font-size:20px;color:var(--faint);width:28px}
+  .b{font-weight:650}
+  .mo{font-family:var(--display);font-size:19px;color:var(--lacquer)}
+  .spec{color:var(--soft);font-size:12.5px;line-height:1.6}
+  .spec b{color:var(--ink);font-weight:600}
+  .tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:2px;margin:3px 4px 0 0;white-space:nowrap}
+  .tag.n{background:var(--rule2);color:var(--soft)} .tag.w{background:var(--lacquer-bg);color:var(--lacquer)} .tag.g{background:var(--teal-bg);color:var(--teal)}
+  a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:3px} a:hover{text-decoration-color:var(--ink)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .card{background:var(--surface);padding:16px 14px}
+  .card .v{font-family:var(--display);font-size:26px;line-height:1.05;display:block;font-variant-numeric:tabular-nums}
+  .card .k{font-size:11.5px;color:var(--faint);margin-top:6px;display:block;line-height:1.45}
+  .card.hot .v{color:var(--lacquer)} .card.cool .v{color:var(--teal)}
+  .call{background:var(--lacquer-bg);border:1px solid var(--lacquer);border-radius:3px;padding:18px 20px;margin:18px 0}
+  .call h3{margin:0 0 8px;color:var(--lacquer);font-size:17px} .call p{margin:0 0 8px;font-size:13.5px} .call p:last-child{margin:0}
+  .note{background:var(--brass-bg);border:1px solid var(--brass);border-radius:3px;padding:16px 18px;font-size:13px;line-height:1.75;margin:18px 0}
+  .note b{color:var(--brass)}
+  .row{display:grid;grid-template-columns:150px 1fr 64px;gap:10px;align-items:center;font-size:13px;margin:7px 0}
+  .row .l{color:var(--soft)} .row .t{height:14px;background:var(--rule2);border-radius:1px;overflow:hidden}
+  .row .t i{display:block;height:100%;background:var(--lacquer)} .row.c .t i{background:var(--teal)} .row.y .t i{background:var(--brass)}
+  .row .n{text-align:right;font-variant-numeric:tabular-nums}
+  .cap{font-size:11.5px;color:var(--faint);margin-top:8px}
+  dl.sheet{display:grid;grid-template-columns:150px 1fr;margin:0;border-top:2px solid var(--ink)}
+  dl.sheet dt,dl.sheet dd{padding:10px 12px 10px 0;border-bottom:1px solid var(--rule2);margin:0;font-size:13.5px}
+  dl.sheet dt{font-weight:650} dl.sheet dd{color:var(--soft)}
+  @media(max-width:560px){ dl.sheet{grid-template-columns:1fr} dl.sheet dt{border-bottom:0;padding-bottom:0} .row{grid-template-columns:110px 1fr 52px} }
+  ul.tight{margin:6px 0 0;padding-left:20px;font-size:13.5px} ul.tight li{margin:4px 0}
+  footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--rule);font-size:12px;color:var(--faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Thị trường Piano Việt Nam ／ 白牌選品 v2</p>
+  <h1>越南蝦皮月銷量實測：熱賣的「電鋼琴」其實是 88 鍵電子琴</h1>
+  <p class="lede">直接從蝦皮越南官網的搜尋接口取得每個商品的「近 30 天銷量」（蝦皮自己算的數字），共 293 個商品。依「有沒有配重琴槌」重新分類：配重電鋼琴、88 鍵電子琴、61 鍵電子琴，各取前五名。</p>
+  <div class="meta"><span>資料日期　2026-10-16</span><span>來源　shopee.vn 搜尋「Bán chạy」排序</span><span>匯率　1 USD ≈ 26,000₫</span><span>取代 10/15 第一版</span></div>
+</header>
+
+<section>
+  <div class="note"><b>這一版改了兩件事。</b>①月銷量是蝦皮官方的 <code>monthly_sold_count</code>，不再用評價數代替。②分類照「配重」切：88 鍵但沒有琴槌結構的（Victor VT02、Bora BX-20、Master C300）歸電子琴。第一版把它們當電鋼琴，是錯的。</div>
+</section>
+
+<section>
+  <h2>結論先講</h2>
+  <p class="sub">越南蝦皮是電子琴市場，真的配重電鋼琴一個月全部加起來不到 80 台。錢最集中的是 215–340 萬₫ 的「木紋外殼 88 鍵電子琴」。</p>
+  <div class="cards">
+    <div class="card hot"><span class="v">~1,040 台</span><span class="k">88 鍵電子琴每月合計<br>VT02＋BX-20＋C300＋Betsy</span></div>
+    <div class="card"><span class="v">≈28 億₫</span><span class="k">上面這群每月營收<br>≈ $108,000</span></div>
+    <div class="card cool"><span class="v">~70 台</span><span class="k">配重電鋼琴每月合計<br>Yamaha P-45 一款就佔 45 台</span></div>
+    <div class="card"><span class="v">480 台</span><span class="k">Victor VT02 每月<br>19 個賣場加總</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>每月營收都在哪</h2>
+  <p class="sub">月銷量 × 售價估算（億₫／月）。台數最多的是便宜兒童琴，但營收最大的是 VT02 這一型。</p>
+  <div class="row"><span class="l">Victor VT02</span><span class="t"><i style="width:100%"></i></span><span class="n">13.0</span></div>
+  <div class="row"><span class="l">Master C300</span><span class="t"><i style="width:48%"></i></span><span class="n">6.2</span></div>
+  <div class="row"><span class="l">Bora BX-20</span><span class="t"><i style="width:45%"></i></span><span class="n">5.8</span></div>
+  <div class="row c"><span class="l">無品牌 61 鍵（合計）</span><span class="t"><i style="width:44%"></i></span><span class="n">5.7</span></div>
+  <div class="row c"><span class="l">兒童琴 37 鍵等（合計）</span><span class="t"><i style="width:44%"></i></span><span class="n">5.7</span></div>
+  <div class="row y"><span class="l">Yamaha P-45</span><span class="t"><i style="width:37%"></i></span><span class="n">4.8</span></div>
+  <div class="row"><span class="l">Betsy 88 鍵</span><span class="t"><i style="width:16%"></i></span><span class="n">2.1</span></div>
+  <div class="row c"><span class="l">Betsy 61 鍵</span><span class="t"><i style="width:15%"></i></span><span class="n">2.0</span></div>
+  <div class="row c"><span class="l">Victor 61 鍵折疊</span><span class="t"><i style="width:13%"></i></span><span class="n">1.7</span></div>
+  <div class="row y"><span class="l">Roland RP-30</span><span class="t"><i style="width:11%"></i></span><span class="n">1.5</span></div>
+  <p class="cap">紅＝88 鍵電子琴、綠＝61 鍵以下、金＝配重電鋼琴。售價用各賣場中間價，粗估。</p>
+</section>
+
+<section>
+  <h2>配重電鋼琴（88 鍵琴槌）前五名</h2>
+  <p class="sub">量很小。真正在蝦皮賣得動的只有 Yamaha P-45。日系大廠的量在實體店，不在蝦皮。</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>型號／品牌</th><th>月銷量</th><th>售價（₫）</th><th>規格／備註</th></tr></thead>
+    <tbody>
+      <tr><td class="rk">1</td><td><a class="b" href="https://shopee.vn/product/36215593/24789185268" target="_blank" rel="noopener">Yamaha P-45</a><br><span class="tag n">Yamaha・9 個賣場</span></td><td class="num"><span class="mo">45</span><br><span class="spec">最大單店 14</span></td><td class="num">1,049–1,317 萬<br><span class="spec">≈$405–505</span></td><td class="spec">GHS 配重琴槌 88 鍵・攜帶型・常配 L-85 木架一起賣</td></tr>
+      <tr><td class="rk">2</td><td><a class="b" href="https://shopee.vn/product/640723764/24037997650" target="_blank" rel="noopener">Roland RP-30</a><br><span class="tag n">Roland・Việt Thương</span></td><td class="num"><span class="mo">8</span></td><td class="num">1,840 萬<br><span class="spec">≈$708</span></td><td class="spec">家用直立式外殼・三踏板</td></tr>
+      <tr><td class="rk">3</td><td><a class="b" href="https://shopee.vn/product/527175315/52715277199" target="_blank" rel="noopener">Master C500</a><br><span class="tag n">Master（中國）</span><span class="tag g">白牌做到琴槌</span></td><td class="num"><span class="mo">8</span></td><td class="num">560 萬<br><span class="spec">≈$215</span></td><td class="spec">標題寫「琴槌鍵，彈起來跟 Yamaha P45 一樣重」・附踏板、木架</td></tr>
+      <tr><td class="rk">4</td><td><a class="b" href="https://shopee.vn/product/634275402/28510629937" target="_blank" rel="noopener">「Kawai CN01」</a><br><span class="tag w">疑似借 Kawai 名的白牌</span></td><td class="num"><span class="mo">5</span></td><td class="num">335 萬<br><span class="spec">≈$129</span></td><td class="spec">Kawai 正品不可能賣這個價，標題寫成「KAWAICN」</td></tr>
+      <tr><td class="rk">5</td><td><a class="b" href="https://shopee.vn/product/527175315/27383761856" target="_blank" rel="noopener">Yamaha YDP-105</a><br><span class="tag n">Yamaha・4 個賣場</span></td><td class="num"><span class="mo">4</span></td><td class="num">1,899–2,109 萬<br><span class="spec">≈$730–810</span></td><td class="spec">家用直立式・GHS</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="tight spec"><li>另有一個 Master C300 賣場標「彈簧鍵／琴槌鍵兩種版本」，268 萬₫、每月 12 台，分不出琴槌版賣多少。Saiger SDP-3618、Kurtzman KS1 Plus 各每月 3 台。</li></ul>
+</section>
+
+<section>
+  <h2>88 鍵電子琴（不配重）前五名</h2>
+  <p class="sub">越南人在蝦皮叫它「đàn piano điện（電鋼琴）」，但沒有琴槌結構。這是整個蝦皮鍵盤樂器營收最大的一塊。</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>型號／品牌</th><th>月銷量</th><th>售價（₫）</th><th>規格／備註</th></tr></thead>
+    <tbody>
+      <tr style="background:var(--lacquer-bg)"><td class="rk" style="color:var(--lacquer)">1</td><td><a class="b" href="https://shopee.vn/product/626295262/25923019757" target="_blank" rel="noopener">Victor VT02</a><br><span class="tag n">Victor 貼牌・19 個賣場</span><span class="tag w">市場龍頭</span></td><td class="num"><span class="mo">480</span><br><span class="spec">最大單店 146</span></td><td class="num">250–282 萬<br><span class="spec">≈$96–108</span></td><td class="spec">木紋外殼、<b>「模擬重量」非琴槌</b>・力度感應・藍牙・10.5kg・附踏板、譜架、線上課・保固 12 個月。說明文字跟無品牌木紋 88 鍵一模一樣，<b>同一個代工廠</b></td></tr>
+      <tr><td class="rk">2</td><td><a class="b" href="https://shopee.vn/product/65467233/23127244864" target="_blank" rel="noopener">Bora BX-20 折疊琴</a><br><span class="tag n">Bora（江西寶瑞）・8 個賣場</span></td><td class="num"><span class="mo">262</span><br><span class="spec">最大單店 103</span></td><td class="num">215–271 萬<br><span class="spec">≈$83–104</span></td><td class="spec">對折收納・力度感應不配重・128 音色・藍牙＋MIDI・鋰電池・4kg</td></tr>
+      <tr><td class="rk">3</td><td><a class="b" href="https://shopee.vn/product/82693855/43910553835" target="_blank" rel="noopener">Master C300</a><br><span class="tag n">Master・8 個賣場</span></td><td class="num"><span class="mo">199</span><br><span class="spec">最大單店 86</span></td><td class="num">268–339 萬<br><span class="spec">≈$103–130</span></td><td class="spec">128 音色・15W×2 喇叭・藍牙音訊＋MIDI・錄音・10kg・133×30×15cm・保固 12 個月</td></tr>
+      <tr><td class="rk">4</td><td><b>Betsy 88 鍵（含折疊款）</b><br><span class="tag n">Betsy・6 個賣場</span></td><td class="num"><span class="mo">96</span></td><td class="num">約 217 萬<br><span class="spec">≈$83</span></td><td class="spec">VT02／BX-20 的跟風款，送線上課</td></tr>
+      <tr><td class="rk">5</td><td><b>Hutadu HD-01 折疊</b><br><span class="tag n">Hutadu・2 個賣場</span></td><td class="num"><span class="mo">27</span></td><td class="num">163–167 萬<br><span class="spec">≈$63</span></td><td class="spec">折疊 88 鍵、力度感應</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="tight spec"><li>其餘 52 個無品牌 88 鍵賣場合計每月 169 台。</li></ul>
+</section>
+
+<section>
+  <h2>61 鍵電子琴前五名</h2>
+  <p class="sub">量最大但單價最低。前三名都是 15–32 萬₫ 的入門／兒童款，有品牌的 Betsy、Victor 在 79–119 萬₫。</p>
+  <div class="tw"><table>
+    <thead><tr><th></th><th>商品</th><th>月銷量</th><th>售價（₫）</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td class="rk">1</td><td><a class="b" href="https://shopee.vn/product/487747364/26935745218" target="_blank" rel="noopener">61 鍵「2 喇叭」款</a><br><span class="tag n">無品牌・同一家店 4 個賣場</span></td><td class="num"><span class="mo">603</span><br><span class="spec">最大單一賣場 424</span></td><td class="num">26–32 萬<br><span class="spec">≈$10–12</span></td><td class="spec">送麥克風、音符貼紙、教材、一對一教學・評分 4.8</td></tr>
+      <tr><td class="rk">2</td><td><a class="b" href="https://shopee.vn/product/1036388549/23980929592" target="_blank" rel="noopener">61 鍵兒童智慧琴</a><br><span class="tag n">無品牌</span></td><td class="num"><span class="mo">353</span></td><td class="num">28 萬<br><span class="spec">≈$11</span></td><td class="spec">16 音色・附麥克風、充電・累計 5,590 台</td></tr>
+      <tr><td class="rk">3</td><td><a class="b" href="https://shopee.vn/product/728171621/57017861136" target="_blank" rel="noopener">MimiToys 61 鍵</a><br><span class="tag n">MimiToys</span><span class="tag w">新品上架即爆</span></td><td class="num"><span class="mo">247</span></td><td class="num">15 萬<br><span class="spec">≈$6</span></td><td class="spec">月銷量＝累計銷量，等於上架不到一個月</td></tr>
+      <tr><td class="rk">4</td><td><b>Betsy 61 鍵（B39／B151）</b><br><span class="tag n">Betsy・5 個賣場</span></td><td class="num"><span class="mo">206</span></td><td class="num">79–119 萬<br><span class="spec">≈$30–46</span></td><td class="spec">有力度感應版本・有折疊款</td></tr>
+      <tr><td class="rk">5</td><td><a class="b" href="https://shopee.vn/product/1532209200/27685980760" target="_blank" rel="noopener">Victor 61 鍵折疊</a><br><span class="tag n">Victor・4 個賣場</span></td><td class="num"><span class="mo">146</span></td><td class="num">115 萬<br><span class="spec">≈$44</span></td><td class="spec">力度感應・送線上課</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="tight spec">
+    <li>接著是 Beemi／MQ6136 每月 98 台（65–112 萬₫）、Rommedal 折疊 92 台（110 萬₫）、MS6102 84 台、Kurtzman 系列合計 80 台。Yamaha PSR 合計只有 34 台。</li>
+    <li>37 鍵以下的兒童琴另外算：單一賣場最高每月 1,841 台（24 萬₫），整群合計約 2,866 台。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>白牌該做哪一種</h2>
+  <div class="call">
+    <h3>主推：VT02 的競品（88 鍵木紋電子琴，250–290 萬₫）</h3>
+    <p>營收池最大：VT02＋BX-20＋C300 每月約 940 台、25 億₫。龍頭 VT02 本身就是中國代工的公模貼牌，說明文字跟無品牌款一字不差。進入門檻是找到同一個代工廠，產品不是護城河。</p>
+    <p>越南進口關稅 0%（ACFTA），跟 Victor、Bora 站在同一條起跑線。</p>
+  </div>
+  <div class="call">
+    <h3>差異化只能靠通路，不是規格</h3>
+    <p>VT02 已經送線上課、保固 12 個月、附踏板。規格再加，對手隔月就跟上。你手上有而他們沒有的是<b>實體教室和老師</b>：「買琴送實體課程體驗」、老師推薦，這是蝦皮賣家複製不了的。</p>
+  </div>
+  <div class="call">
+    <h3>升級版選項：真琴槌、500–600 萬₫</h3>
+    <p>Master C500 證明白牌可以做到琴槌鍵、賣 560 萬₫，但每月只有 8 台。Yamaha P-45 賣 1,060 萬₫ 卻有 45 台，說明這個價位帶的人要品牌。這條路要靠教室的老師背書才走得動，不適合當蝦皮主力。</p>
+  </div>
+  <dl class="sheet">
+    <dt>不建議</dt><dd>61 鍵 15–32 萬₫：量大但單台營收不到 $12，前三名都是無品牌玩具級，純拚價格和廣告。37 鍵兒童琴同理。</dd>
+    <dt>待查</dt><dd>VT02 的代工廠（1688 搜同款木紋 88 鍵、10.5kg、800 音色）、出廠價、最小訂量，算出到岸毛利再決定。</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>資料限制</h2>
+  <ul class="tight">
+    <li>只抓了 7 個關鍵字的「熱銷」排序前 1–2 頁，共 293 個商品。排名後面的長尾沒有涵蓋，合計數字是下限。</li>
+    <li>同型號跨賣場加總是用標題比對（例如含「VT02」），可能漏抓標題沒寫型號的賣場。</li>
+    <li>只有蝦皮，沒有 TikTok Shop、Lazada。</li>
+    <li>SeaMCP 給的 VT02 月銷量是 895，蝦皮官方是 146（單一賣場），兩者差 6 倍，本頁以蝦皮官方為準。</li>
+    <li>規格以店家說明為準。「模擬重量」「重鍵」這類用詞不等於有琴槌結構。</li>
+  </ul>
+</section>
+
+<footer>
+  資料來源：shopee.vn 搜尋接口 search_items（by=sales，monthly_sold_count／historical_sold_count），2026-10-16 實抓；商品頁 pdp/get_pc（VT02、C300 規格）；Metric.vn 30 天營收排序（交叉驗證排名順序）；9/24 越南鋼琴市場調研（關稅、二手市場）。價格為抓取當下的售價。
+</footer>
+
+</div>
+</body>
+</html>
